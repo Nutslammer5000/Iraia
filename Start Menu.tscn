@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx6jyd6cnq3wd"]
+
+[ext_resource type="Script" path="res://start_menu.gd" id="1_qto1m"]
+[ext_resource type="Texture2D" uid="uid://dq31h2ge40yv5" path="res://Game background finished #2-1.png (1).png" id="2_h0o0p"]
+[ext_resource type="AudioStream" uid="uid://dkre85uw4oawk" path="res://Chaos of Eternity.mp3" id="2_pixr4"]
+[ext_resource type="Texture2D" uid="uid://dg3w521nnu5hl" path="res://New Piskel-1.png (1).png" id="4_3o84h"]
+[ext_resource type="Texture2D" uid="uid://xtsvpebup24c" path="res://New Piskel-2.png.png" id="5_3go5t"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qto1m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1025.5, 551.25)
+scale = Vector2(1.16989, 1.07764)
+texture = ExtResource("2_h0o0p")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_pixr4")
+volume_db = 13.105
+autoplay = true
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 8.0
+anchor_top = -3.525
+anchor_right = 14.6
+anchor_bottom = 3.075
+scale = Vector2(3, 3)
+icon = ExtResource("4_3o84h")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 33.6
+anchor_top = 17.925
+anchor_right = 40.2
+anchor_bottom = 24.525
+offset_top = -6.10352e-05
+offset_bottom = -0.00012207
+scale = Vector2(3, 3)
+icon = ExtResource("5_3go5t")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

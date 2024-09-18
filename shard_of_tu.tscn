@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://76x34ttkdj2y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri7qc"]
+size = Vector2(171, 192)
+
+[node name="Shard of Tu" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(75.5, -86)
+shape = SubResource("RectangleShape2D_ri7qc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

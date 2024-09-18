@@ -1,0 +1,132 @@
+[gd_scene load_steps=14 format=3 uid="uid://dmhhv4bjxjc67"]
+
+[ext_resource type="Texture2D" uid="uid://crh0u5l7tt5sj" path="res://New Piskel (2).png" id="1_o02s6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrcuo"]
+atlas = ExtResource("1_o02s6")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8n6g"]
+atlas = ExtResource("1_o02s6")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji6fy"]
+atlas = ExtResource("1_o02s6")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyfvm"]
+atlas = ExtResource("1_o02s6")
+region = Rect2(0, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsrop"]
+atlas = ExtResource("1_o02s6")
+region = Rect2(100, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe5yp"]
+atlas = ExtResource("1_o02s6")
+region = Rect2(200, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ea7q"]
+atlas = ExtResource("1_o02s6")
+region = Rect2(0, 200, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqqsn"]
+atlas = ExtResource("1_o02s6")
+region = Rect2(100, 200, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73pje"]
+atlas = ExtResource("1_o02s6")
+region = Rect2(200, 200, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcx8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrcuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8n6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji6fy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyfvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsrop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe5yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ea7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqqsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73pje")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_bnyle"]
+length = 0.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["default"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.833333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8v7py"]
+_data = {
+"default": SubResource("Animation_bnyle")
+}
+
+[node name="vanish" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pcx8a")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8v7py")
+}

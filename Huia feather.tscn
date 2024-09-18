@@ -1,0 +1,197 @@
+[gd_scene load_steps=23 format=3 uid="uid://buof1tvbeduwl"]
+
+[ext_resource type="Texture2D" uid="uid://c82tjv8vjyqq1" path="res://Huia feather collectable .png" id="2_iflan"]
+
+[sub_resource type="GDScript" id="GDScript_djtk2"]
+script/source = "extends Area2D
+
+
+
+func collected():
+	var vanish = preload(\"res://vanish.tscn\")
+	var new_vanish_object = vanish.instantiate()
+	get_tree().current_scene.add_child(new_vanish_object)
+	new_vanish_object.global_position = global_position
+
+func _on_body_entered(body): 
+	if body.is_in_group(\"Player\"):
+		collected()
+		queue_free()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltnrb"]
+height = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15rkd"]
+atlas = ExtResource("2_iflan")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s015b"]
+atlas = ExtResource("2_iflan")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd4qp"]
+atlas = ExtResource("2_iflan")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxsf2"]
+atlas = ExtResource("2_iflan")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccywv"]
+atlas = ExtResource("2_iflan")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcvbt"]
+atlas = ExtResource("2_iflan")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lutid"]
+atlas = ExtResource("2_iflan")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvynq"]
+atlas = ExtResource("2_iflan")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pssv8"]
+atlas = ExtResource("2_iflan")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hhxv"]
+atlas = ExtResource("2_iflan")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3c28"]
+atlas = ExtResource("2_iflan")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy17p"]
+atlas = ExtResource("2_iflan")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt5yi"]
+atlas = ExtResource("2_iflan")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yt6v"]
+atlas = ExtResource("2_iflan")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tbcw"]
+atlas = ExtResource("2_iflan")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5t7qx"]
+atlas = ExtResource("2_iflan")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7wx4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15rkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s015b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd4qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxsf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccywv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcvbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lutid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvynq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pssv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hhxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3c28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy17p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt5yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yt6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tbcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5t7qx")
+}],
+"loop": true,
+"name": &"spinning feather",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_jbkad"]
+length = 2.66667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1, 1.16667, 1.33333, 1.5, 1.66667, 1.83333, 2, 2.16667, 2.33333, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["spinning feather"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bqtlo"]
+_data = {
+"spinning feather": SubResource("Animation_jbkad")
+}
+
+[node name="FEATHER" type="Area2D"]
+script = SubResource("GDScript_djtk2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ltnrb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(12, -5)
+scale = Vector2(1.04688, 1.25)
+sprite_frames = SubResource("SpriteFrames_7wx4t")
+animation = &"spinning feather"
+autoplay = "spinning feather"
+frame = 11
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bqtlo")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
