@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://buof1tvbeduwl"]
 
-[ext_resource type="Texture2D" uid="uid://c82tjv8vjyqq1" path="res://Huia feather collectable .png" id="2_iflan"]
+[ext_resource type="Texture2D" uid="uid://dpsc51pw53i7f" path="res://Huia feather collectable .png" id="2_iflan"]
 
 [sub_resource type="GDScript" id="GDScript_djtk2"]
 script/source = "extends Area2D

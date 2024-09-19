@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cx6jyd6cnq3wd"]
 
 [ext_resource type="Script" path="res://start_menu.gd" id="1_qto1m"]
-[ext_resource type="Texture2D" uid="uid://dq31h2ge40yv5" path="res://Game background finished #2-1.png (1).png" id="2_h0o0p"]
-[ext_resource type="AudioStream" uid="uid://dkre85uw4oawk" path="res://Chaos of Eternity.mp3" id="2_pixr4"]
-[ext_resource type="Texture2D" uid="uid://dg3w521nnu5hl" path="res://New Piskel-1.png (1).png" id="4_3o84h"]
-[ext_resource type="Texture2D" uid="uid://xtsvpebup24c" path="res://New Piskel-2.png.png" id="5_3go5t"]
+[ext_resource type="Texture2D" uid="uid://bxpsi1a5q2q36" path="res://Game background finished #2-1.png (1).png" id="2_h0o0p"]
+[ext_resource type="AudioStream" uid="uid://p1o11gmtbj36" path="res://Chaos of Eternity.mp3" id="2_pixr4"]
+[ext_resource type="Texture2D" uid="uid://cci0a8iru3b8t" path="res://New Piskel-1.png (1).png" id="4_3o84h"]
+[ext_resource type="Texture2D" uid="uid://dn7x5ljvioi6g" path="res://New Piskel-2.png.png" id="5_3go5t"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
