@@ -11,12 +11,12 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_play_pressed() -> void:
+func _on_play_pressed() -> void: #This is the play button when you press this button the game starts you at level 1
 	get_tree().change_scene_to_file("res://world.tscn")
-	pass
+	pass 
 
 
-func _on_quit_pressed() -> void:
+func _on_quit_pressed() -> void: #This is the code for the quit button, when its pressed it closes the game.
 	get_tree().quit()
 	pass
   

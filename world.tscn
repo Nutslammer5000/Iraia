@@ -606,6 +606,10 @@ size = Vector2(83, 117.5)
 
 [node name="Player" parent="." instance=ExtResource("1_v7civ")]
 position = Vector2(163, 192)
+SPEED = 350.0
+JUMP_VELOCITY = -450.0
+ACCERLERATION = 15.0
+jumps = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, 1)

@@ -11,6 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_area_2d_2_body_entered(body: Node2D) -> void:
+func _on_area_2d_2_body_entered(body: Node2D) -> void: #this code ends the game when you get to the end collision box
 	if body.is_in_group("Player"):
 		get_tree().change_scene_to_file("res://END SCREEN.tscn")

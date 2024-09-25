@@ -7,13 +7,13 @@ script/source = "extends Area2D
 
 
 
-func collected():
+func collected(): #this code makes sure when you pick up the feather it places the vanish animation
 	var vanish = preload(\"res://vanish.tscn\")
 	var new_vanish_object = vanish.instantiate()
 	get_tree().current_scene.add_child(new_vanish_object)
 	new_vanish_object.global_position = global_position
 
-func _on_body_entered(body): 
+func _on_body_entered(body): #this is the code for the player colleting the feather
 	if body.is_in_group(\"Player\"):
 		collected()
 		queue_free()
