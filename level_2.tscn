@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cv4mcahdugeb0"]
+[gd_scene load_steps=29 format=4 uid="uid://cv4mcahdugeb0"]
 
 [ext_resource type="Script" path="res://play.gd" id="1_mwlmr"]
 [ext_resource type="PackedScene" uid="uid://dd1cnuarmrege" path="res://IRAIA (CHARACTER).tscn" id="2_qqgju"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bt76vlatnbkor" path="res://2 Background/Layers/2.png" id="13_vj4pi"]
 [ext_resource type="Texture2D" uid="uid://dvym3r7j4y85y" path="res://2 Background/Layers/3.png" id="14_ll1yt"]
 [ext_resource type="Texture2D" uid="uid://btyk6mncy0oi2" path="res://2 Background/Layers/5.png" id="15_44xiq"]
+[ext_resource type="AudioStream" uid="uid://p1o11gmtbj36" path="res://Chaos of Eternity.mp3" id="16_baxue"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3r4dj"]
 texture = ExtResource("3_uawmn")
@@ -687,6 +688,11 @@ metadata/_edit_use_anchors_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(2039, -113)
 shape = SubResource("RectangleShape2D_htkw6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_baxue")
+volume_db = 13.105
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
